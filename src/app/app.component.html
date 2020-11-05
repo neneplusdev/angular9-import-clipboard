@@ -1,0 +1,23 @@
+<div style="border:solid;height:100px" (paste)="pasteData($event)">
+  Click anywhere in this area and press ctrl + v to paste the copied data
+</div>
+
+<p>
+  Your copied data
+</p>
+<table>
+  <thead>
+      <tr>
+        <th *ngFor = "let column of displayedColumns">
+          {{column}}
+        </th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let row of copiedData">
+      <td *ngFor = "let column of displayedColumns">
+        {{row[column]}}
+      </td>
+    </tr>
+  </tbody>
+</table>
